@@ -1,0 +1,34 @@
+extends layouts/login_layout.pug
+
+block content 
+    .loginContainer
+        h1 Register
+        form#registerForm(method="POST" onsubmit="event.preventDefault(); validationForm();")
+
+            p.errorMessage #{errorMessage}
+
+            input(type="text", name="firstName", placeholder="First name", value=firstName, required="")
+            input(type="text", name="lastName", placeholder="Last name", value=lastName, required="")
+            input(type="text", name="username", placeholder="Username", value=username, required="")
+            input(type="email", name="email", placeholder="Email", value=email, required="")
+            input#password(type="password", name="password", placeholder="Password", required="")
+            input#passwordConf(type="password", name="passwordConf", placeholder="Confirm password", required="")
+            input(type="submit", value="Register")
+
+        a(href="/login") Already have an account? Login here!
+
+    //- Client side validation
+    //- Check the comfirmation password is the same as the password
+    script.  
+        const password = document.getElementById("password");
+        const passwordConf = document.getElementById("passwordConf");
+        const form = document.getElementById("registerForm");
+
+        function validationForm() {
+            if (password.value !== passwordConf.value) {
+                alert("Passwords do not match");
+            }
+            else {
+                form.submit();
+            }
+        }
