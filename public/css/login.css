@@ -12,12 +12,12 @@ body {
     padding: 20px;
     width: 80%;
     max-width: 500px;
-    border: 1px solid #5c3737;
+    border: 1px solid #dedede;
     background-color: #fff;
     text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
 form {
@@ -25,12 +25,12 @@ form {
     flex-direction: column;
 }
 
-input[type="text"]
-input[type="email"]
-input[type="password"]{
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     margin-bottom: 20px;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 2px;
     border: 1px solid #dedede;
     background-color: #f2f2f2;
 }
