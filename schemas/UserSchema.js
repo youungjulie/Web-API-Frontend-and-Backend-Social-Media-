@@ -33,7 +33,7 @@ const UserSchema = new Schema({
     // create a default picture when users sign up
     profilePic: {
         type: String,
-        default: "/images/defaultProfilePic.png"
+        default: "/images/profilePic.jpeg"
     },
 }, { timestamps: true });
 
