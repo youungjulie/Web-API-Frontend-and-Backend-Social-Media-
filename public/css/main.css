@@ -197,3 +197,127 @@ button {
     color: var(--yellow);
     border-radius: 50%;
 }
+
+.errorMessage {
+    padding: var(--spacing);
+}
+
+.profileHeaderContainer .userImageContainer {
+    width: 132px;
+    height: 132px;
+    margin-left: var(--spacing);
+    position: absolute;
+    bottom: -66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userImageContainer:hover .profilePictureButton,
+.coverPhotoSection:hover .coverPhotoButton {
+    display: block;
+}
+
+.profileHeaderContainer .coverPhotoContainer {
+    height: 190px;
+    background-color: var(--yellowBackground);
+    position: relative; 
+}
+
+.coverPhotoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileHeaderContainer .userImageContainer {
+    width: 132px;
+    height: 132px;
+    margin-left: var(--spacing);
+    position: absolute;
+    bottom: -66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileHeaderContainer .userImageContainer img {
+    border: 4px solid #fff;
+}
+
+.profileHeaderContainer .profileButtonsContainer {
+    text-align: right;
+    padding: var(--spacing);
+    min-height: 66px;
+}
+
+.profileButton,
+.followButton {
+    border: 1px solid var(--yellowicon);
+    color: var(--yellowicon);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: var(--spacing);
+}
+
+.profileButton:hover,
+.followButton:hover {
+    background-color: var(--yellowBackground);
+}
+
+.followButton.following {
+    background-color: var(--yellowicon);
+    color: #fff;
+}
+
+.profileHeaderContainer .userDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing);
+}
+.followersContainer .value {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.followersContainer span:not(.value) {
+    color: var(--greyText);
+}
+
+.followersContainer a {
+    margin-right: 15px;
+}
+
+.followersContainer a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.tabsContainer {
+    display: flex;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+}
+
+.tab {
+    flex: 1;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--greyText);
+    font-weight: bold;
+}
+
+.tab.active {
+    color: var(--yellowicon);
+    border-bottom: 2px solid var(--yellowicon);
+}
+
+.tab:hover {
+    color: var(--yellow);
+    background-color: var(--yellowicon);
+}
