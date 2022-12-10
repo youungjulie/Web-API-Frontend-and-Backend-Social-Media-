@@ -28,10 +28,11 @@ html(lang="en")
                         i.fas.fa-sign-out-alt
 
                 .mainSectionContainer.col-10.col-md-8.col-lg-6
+                    .titleContainer 
+                        h1 #{pageTitle}
                     block content 
 
                 .d-none.d-md-block.col-md-2.col-lg-4
-                    span Right Column
 
         //- Bootstrap JS: doesn't change the look of the page, but it adds functionality
         script(src='https://kit.fontawesome.com/2b0859b3af.js' crossorigin='anonymous')
