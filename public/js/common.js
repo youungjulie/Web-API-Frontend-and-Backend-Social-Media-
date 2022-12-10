@@ -43,6 +43,7 @@ function createPostHtml(postData) {
     if(postedBy._id === undefined) {
         return console.log("User object not populated");
     }
+    
     var displayName = postedBy.firstName + " " + postedBy.lastName;
     var timestamp = timeDifference(new Date(), new Date(postData.createdAt));
 
