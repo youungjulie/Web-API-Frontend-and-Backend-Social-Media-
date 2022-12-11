@@ -1,16 +1,17 @@
 :root {
     --blue: #1FA2F1;
     --blueLight: #9BD1F9;
-    --yellowBackground: rgb(255, 240, 155);
-    --buttonHoverBg: #eeeda2;
+    --yellowBackground: rgb(252, 246, 213);
+    --buttonHoverBg: hsl(59, 69%, 78%);
     --lightGrey: rgb(230, 236, 240);
     --spacing: 15px;
-    --greyText: rgb(213, 214, 200);
+    --greyText: rgb(184, 185, 171);
     --greyButtonText: rgba(0,0,0,0.34);
     --red: rgb(226,34,94);
     --redBackground: rgba(226,34,94,0.1);
     --yellow: rgb(161, 145, 54);
     --yellowicon: rgb(224, 204, 91);
+    --green: rgb(23,191,99);
     --greenBackground: rgba(23,191,99,0.1);
 }
 
@@ -62,10 +63,19 @@ nav a:hover {
     border-radius: 50%;
 }
 
+.wrapper > .row {
+    margin: 0;
+}
+
 button {
     background-color: transparent;
     border: none;
     color: var(--greyButtonText);
+}
+
+button i,
+button span {
+    pointer-events: none;
 }
 
 .mainSectionContainer {
@@ -100,6 +110,10 @@ button {
     border: none;
     padding: 0;
     padding-top: var(--spacing);
+}
+
+.modal .post{
+    padding: 0 0 var(--spacing) 0;
 }
 
 .userImageContainer {
@@ -196,6 +210,30 @@ button {
     background-color: #fcf5b5;
     color: var(--yellow);
     border-radius: 50%;
+}
+
+.postButtonContainer.red button.active {
+    color: var(--red);
+}
+
+.postButtonContainer.red button:hover {
+    color: var(--red);
+    background-color: var(--redBackground)
+}
+
+.postButtonContainer.green button.active {
+    color: var(--green);
+}
+
+.postButtonContainer.green button:hover {
+    color: var(--green);
+    background-color: var(--greenBackground)
+}
+
+.postActionContainer {
+    padding-left: 25px;
+    font-size: 14px;
+    color: var(--greyText);
 }
 
 .errorMessage {
@@ -320,4 +358,33 @@ button {
 .tab:hover {
     color: var(--yellow);
     background-color: var(--yellowicon);
+}
+
+.replyFlag {
+    margin-bottom: 5px;
+}
+
+.replyFlag a {
+    color: var(--blue);
+}
+
+.post.shadowBox {
+    background-color: var(--yellowBackground);
+}
+
+.postContentContainer .header {
+    display: flex;
+}
+
+.postContentContainer .header .date {
+    flex: 1;
+}
+
+.postsContainer .noResults {
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--greyText);
+    font-weight: bold;
 }

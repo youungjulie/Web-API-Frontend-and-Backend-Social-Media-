@@ -1,13 +1,14 @@
 //- reference the main_layout.pug file
 extends layouts/main_layout.pug
 
-block content
+block content 
+    script.
+        var postId = '!{postId}'
     //- add the post form to the home page
-    +createPostForm(userLoggedIn)
     .postsContainer
 
     //- post modal includes reply and delete modals
     +createPostModals(userLoggedIn)
 
 block scripts
-    script(src="/js/home.js")
+    script(src="/js/postPage.js")

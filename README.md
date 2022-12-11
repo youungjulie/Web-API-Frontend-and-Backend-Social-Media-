@@ -24,3 +24,11 @@ File Structure
 ├── database.js             # file used to connect the MongoDB
 └── README.md
 ```
+
+API structure
+
+GET "/login"  
+GET "/register"  
+GET "/logout"  
+"/api/posts"  
+"profile"  
