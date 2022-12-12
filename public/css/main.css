@@ -413,7 +413,61 @@ button span {
 #coverPreview {
     width: 100%;
     display: block;
- 
+
     /* This rule is very important, please don't ignore this */
     max-width: 100%;
+}
+
+#userSearchTextbox {
+    border: none;
+    flex: 1;
+    font-weight: 200;
+    min-width: 350px;
+}
+
+.searchBarContainer {
+    position: relative;
+    color: var(--greyText);
+    padding: 10px var(--spacing);
+}
+
+.searchBarContainer i {
+    position: absolute;
+    top: 20px;
+    left: 28px;
+}
+
+.searchBarContainer #searchBox {
+    height: 36px;
+    width: 100%;
+    padding: 5px 15px 5px 40px;
+    border-radius: 50px;
+    background-color: var(--lightGrey);
+    border: none;
+    /* color: var(--greyText); */
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultsContainer .user {
+    padding: var(--spacing);
+    display: flex;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.user .userDetailsContainer {
+    flex: 1;
+    padding: 0 var(--spacing)
+}
+
+.noResults {
+    padding: var(--spacing);
+}
+
+.user .userDetailsContainer {
+    flex: 1;
+    padding: 0 var(--spacing)
 }

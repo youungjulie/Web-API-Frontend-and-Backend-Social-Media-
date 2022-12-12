@@ -12,6 +12,11 @@ router.get("/", async (req, res, next) => {
 
     var searchObj = req.query;
 
+    if(searchObj.search !== undefined) {
+        searchObj.content = { $regex: searchObj.search, $options: "i" };
+        delete searchObj.search;
+    }
+
     if(searchObj.isReply !== undefined) {
         var isReply = searchObj.isReply == "true";
         searchObj.replyTo = { $exists: isReply };
