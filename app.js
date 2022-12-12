@@ -20,6 +20,7 @@ app.set("view engine", "pug");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false })); // only contains key value pairs
+
 // anything in the public folder is accessible (static files)
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -34,18 +35,23 @@ const registerRoute = require('./routes/registerRoutes');
 const logoutRoute = require('./routes/logoutRoutes');
 const postRoute = require('./routes/postRoutes');
 const profileRoute = require('./routes/profileRoutes');
+const uploadRoute = require('./routes/uploadRoutes');
+
 
 // API Routes
 const postApiRoute = require('./routes/api/posts');
-
+const usersApiRoute = require('./routes/api/users');
 
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/logout", logoutRoute);
 app.use("/posts", middleware.requireLogin, postRoute);
 app.use("/profile", middleware.requireLogin, profileRoute);
+app.use("/uploads", uploadRoute);
+
 
 app.use("/api/posts", postApiRoute);
+app.use("/api/users", usersApiRoute);
 
 app.get("/", middleware.requireLogin, (req, res, next) => {
     

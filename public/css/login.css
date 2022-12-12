@@ -8,6 +8,10 @@ body {
     margin-top: 20px;
 }
 
+.loginContainer h1 {
+    font-family: "Sofia", sans-serif;
+}
+
 .loginContainer {
     padding: 20px;
     width: 80%;
@@ -41,4 +45,8 @@ input[type="submit"] {
     border: none;
     border-radius: 2px;
     margin-bottom: 10px;
+}
+
+.errorMessage {
+    color: rgb(226,34,94);
 }
