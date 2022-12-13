@@ -12,8 +12,7 @@ npm install
 ```
 npm start
 ```
-----
-File Structure
+# File Structure
 ```
 .
 ├── public                  # public files manage user inferface
@@ -32,4 +31,15 @@ File Structure
 Others are dependencies and .gitignore files. 
 
 ## API structure
+### Home and Login API
+<img src="https://user-images.githubusercontent.com/63425702/207232564-1a9cb1fe-ba4c-4965-b527-cd6bcce89fb1.jpg" alt="Home and Login API" width="600" height="200" >
+
+### Search and View Post API
+<img src="https://user-images.githubusercontent.com/63425702/207232775-671f6fa0-6f3b-4f32-aba8-dc52ccfab4e2.jpg" alt="Search and View Post API" width="600" height="150">
+
+### Profile Page API
+<img src="https://user-images.githubusercontent.com/63425702/207233590-e470d6ab-df7f-4637-ae82-3429ad9ee5f5.jpg" alt="Profile page API" width="600" height="300">
+
+### Navigation Bar API
+<img src="https://user-images.githubusercontent.com/63425702/207233662-6911a465-adcd-4bc5-9f67-886270db1078.jpg" alt="Navigation Bar" width="500" height="150">
 
