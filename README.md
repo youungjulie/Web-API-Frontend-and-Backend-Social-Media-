@@ -2,16 +2,24 @@
 
 To use the file and view the webpages:
 
-## step 1: Install all dependencies. 
+## View on AWS server
+HTTP address: http://54.215.73.132/
+
+
+## View Locally
+### step 1: Install all dependencies. 
 
 ```
 npm install
 ```
 
-## step 2: Start the server. 
+### step 2: Start the server. 
 ```
 npm start
 ```
+### Local address
+HTTP address: http://localhost:3000
+
 # File Structure
 ```
 .
