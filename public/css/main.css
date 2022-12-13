@@ -67,6 +67,17 @@ nav a:hover {
     margin: 0;
 }
 
+/* .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrapper > .row {
+    margin: 0;
+    height: 100%;
+} */
+
 button {
     background-color: transparent;
     border: none;

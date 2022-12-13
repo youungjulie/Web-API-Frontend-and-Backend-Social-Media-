@@ -18,7 +18,7 @@ $("#postTextarea, #replyTextarea").keyup(event => {
     }
 
     submitButton.prop("disabled", false);
-}) 
+});
 
 // this button used for both post and reply
 $("#submitPostButton, #submitReplyButton").click(() => {
@@ -49,8 +49,8 @@ $("#submitPostButton, #submitReplyButton").click(() => {
             textbox.val("");
             button.prop("disabled", true);
         }
-    })
-})
+    });
+});
 
 // show bs modal is a bootstrap event, fire the event when the reply button is clicked
 $("#replyModal").on("show.bs.modal", (event) => {
@@ -60,8 +60,8 @@ $("#replyModal").on("show.bs.modal", (event) => {
 
     $.get("/api/posts/" + postId, results => {
         outputPosts(results.postData, $("#originalPostContainer"));
-    })
-})
+    });
+});
 
 // make sure the modal is empty when it's closed
 $("#replyModal").on("hidden.bs.modal", () => $("#originalPostContainer").html(""));
@@ -87,8 +87,8 @@ $("#deletePostButton").click((event) => {
             }
             location.reload();
         }
-    })
-})
+    });
+});
 
 $("#filePhoto").change(function(){    
     if(this.files && this.files[0]) {
@@ -106,10 +106,10 @@ $("#filePhoto").change(function(){
                 background: false
             });
 
-        }
+        };
         reader.readAsDataURL(this.files[0]);
     }
-})
+});
 
 $("#coverPhoto").change(function(){    
     if(this.files && this.files[0]) {
@@ -127,10 +127,10 @@ $("#coverPhoto").change(function(){
                 background: false
             });
 
-        }
+        };
         reader.readAsDataURL(this.files[0]);
     }
-})
+});
 
 
 $("#imageUploadButton").click(() => {
@@ -152,9 +152,9 @@ $("#imageUploadButton").click(() => {
             processData: false,
             contentType: false,
             success: () => location.reload()
-        })
-    })
-})
+        });
+    });
+});
 
 $("#coverPhotoButton").click(() => {
     var canvas = cropper.getCroppedCanvas();
@@ -175,9 +175,9 @@ $("#coverPhotoButton").click(() => {
             processData: false,
             contentType: false,
             success: () => location.reload()
-        })
-    })
-})
+        });
+    });
+});
 
 // this is dynamic, so we need to use event delegation
 $(document).on("click", ".likeButton", (event) => {
@@ -200,11 +200,9 @@ $(document).on("click", ".likeButton", (event) => {
             else {
                 button.removeClass("active");
             }
-
         }
-    })
-
-})
+    });
+});
 
 
 $(document).on("click", ".retweetButton", (event) => {
@@ -228,9 +226,8 @@ $(document).on("click", ".retweetButton", (event) => {
             }
 
         }
-    })
-
-})
+    });
+});
 
 $(document).on("click", ".post", (event) => {
     var element = $(event.target);
@@ -239,7 +236,41 @@ $(document).on("click", ".post", (event) => {
     if (postId !== undefined && !element.is("button")) {
         window.location.href = "/posts/" + postId;
     }
-})
+});
+
+$(document).on("click", ".followButton", (event) => {
+    var button = $(event.target);
+    var userId = button.data().user;
+
+    $.ajax({
+        url: `/api/users/${userId}/follow`,
+        type: "PUT",
+        success: (data, status, xhr) => {
+            if(xhr.status == 404) {
+                alert("user not found");
+                return;
+            }
+
+            var difference = 1;
+            if(data.following && data.following.includes(userId)) {
+                button.addClass("following");
+                button.text("Following");
+            }
+            else {
+                button.removeClass("following");
+                button.text("Follow");
+                difference = -1;
+            }
+
+            var followersLabel = $("#followersValue");
+            if(followersLabel.length != 0) {
+                var followersText = followersLabel.text();
+                followersText = parseInt(followersText);
+                followersLabel.text(followersText + difference);
+            }
+        }
+    });
+});
 
 
 function getPostIdFromElement(element) {
