@@ -17,7 +17,7 @@ npm install
 ```
 npm start
 ```
-### Local address
+### Local address (aws turned off)
 HTTP address: http://localhost:3000
 
 # File Structure
