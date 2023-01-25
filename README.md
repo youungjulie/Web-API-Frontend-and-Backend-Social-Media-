@@ -2,7 +2,7 @@
 This file describes the file implementation, file structures, and API endpoints in the git repo.  
 Please follow the instructions to view the webpage of our Social Media Project. 
 
-## View on Deployed Server
+## View on Deployed Server (AWS turned off)
 HTTP address: http://54.215.73.132/
 
 
